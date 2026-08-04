@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "sdk_version": "0.26.1",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "red-dead-completionist",
+      "version": "0.1.0",
+      "title": "Red Dead Completionist"
+    },
+    "tools": [
+      {
+        "name": "list_categories",
+        "title": "List guide categories",
+        "description": "List all Red Dead Redemption 1 completion categories with official 100% counts, completionist extras, and dataset health.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_items",
+        "title": "List guide items",
+        "description": "List trackable entries in one Red Dead Redemption 1 category (story, strangers, bounties, collectibles, etc.), optionally filtered to official 100% items or a region.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string",
+              "enum": [
+                "story",
+                "strangers",
+                "challenges",
+                "bounties",
+                "jobs",
+                "hideouts",
+                "minigames",
+                "collectibles",
+                "locations",
+                "outfits",
+                "weapons",
+                "safehouses"
+              ],
+              "description": "Category to list."
+            },
+            "officialOnly": {
+              "description": "When true, only entries required for official 100% completion.",
+              "type": "boolean"
+            },
+            "region": {
+              "description": "Filter by region name, e.g. 'New Austin'.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "category"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "search_guide",
+        "title": "Search the guide",
+        "description": "Free-text search across every Red Dead Redemption 1 guide entry (titles, summaries, walkthroughs, tags) and return matching ids for get_walkthrough.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "minLength": 2,
+              "description": "Search text, e.g. 'Evans Repeater' or 'treasure map'."
+            },
+            "limit": {
+              "description": "Max results (default 15).",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            }
+          },
+          "required": [
+            "query"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_walkthrough",
+        "title": "Get walkthrough",
+        "description": "Get the full walkthrough for one guide entry by id: objectives, step-by-step checklist, gold medal requirements, missable warnings, rewards, map marker details and unlock steps.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Trackable id, e.g. a mission or collectible id from list_items."
+            }
+          },
+          "required": [
+            "id"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_map_pins",
+        "title": "List map pins",
+        "description": "List every guide entry that has a map pin on the Border States 1910 base map — rare weapons, treasure maps, hideouts and bounty locations — with normalized coordinates and captions.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "category": {
+              "description": "Optional category id filter, e.g. 'weapons' or 'collectibles'.",
+              "type": "string"
+            },
+            "verifiedOnly": {
+              "description": "When true, only pins with verified coordinates.",
+              "type": "boolean"
+            }
+          }
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}

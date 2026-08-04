@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "RDR1 Completionist",
+    "slug": "rdr1-completionist",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#14100b"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.lovable.rdr1completionist",
+      "requireFullScreen": false
+    },
+    "android": {
+      "package": "app.lovable.rdr1completionist",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#14100b"
+      }
+    },
+    "web": { "bundler": "metro" }
+  }
+}

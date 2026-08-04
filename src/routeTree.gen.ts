@@ -9,94 +9,29 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WeaponsRouteImport } from './routes/weapons'
-import { Route as StrangersRouteImport } from './routes/strangers'
-import { Route as StoryRouteImport } from './routes/story'
-import { Route as SafehousesRouteImport } from './routes/safehouses'
-import { Route as ReferenceRouteImport } from './routes/reference'
-import { Route as OutfitsRouteImport } from './routes/outfits'
-import { Route as MinigamesRouteImport } from './routes/minigames'
-import { Route as McpRouteImport } from './routes/mcp'
-import { Route as MapRouteImport } from './routes/map'
-import { Route as LocationsRouteImport } from './routes/locations'
-import { Route as JobsRouteImport } from './routes/jobs'
-import { Route as HideoutsRouteImport } from './routes/hideouts'
-import { Route as CollectiblesRouteImport } from './routes/collectibles'
-import { Route as ChallengesRouteImport } from './routes/challenges'
-import { Route as BountiesRouteImport } from './routes/bounties'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
+import { Route as BountiesRouteImport } from './routes/bounties'
+import { Route as ChallengesRouteImport } from './routes/challenges'
+import { Route as CollectiblesRouteImport } from './routes/collectibles'
+import { Route as HideoutsRouteImport } from './routes/hideouts'
+import { Route as JobsRouteImport } from './routes/jobs'
+import { Route as LocationsRouteImport } from './routes/locations'
+import { Route as MapRouteImport } from './routes/map'
+import { Route as McpRouteImport } from './routes/mcp'
+import { Route as MinigamesRouteImport } from './routes/minigames'
+import { Route as OutfitsRouteImport } from './routes/outfits'
+import { Route as ReferenceRouteImport } from './routes/reference'
+import { Route as SafehousesRouteImport } from './routes/safehouses'
+import { Route as StoryRouteImport } from './routes/story'
+import { Route as StrangersRouteImport } from './routes/strangers'
+import { Route as WeaponsRouteImport } from './routes/weapons'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
+import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
 
-const WeaponsRoute = WeaponsRouteImport.update({
-  id: '/weapons',
-  path: '/weapons',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StrangersRoute = StrangersRouteImport.update({
-  id: '/strangers',
-  path: '/strangers',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StoryRoute = StoryRouteImport.update({
-  id: '/story',
-  path: '/story',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SafehousesRoute = SafehousesRouteImport.update({
-  id: '/safehouses',
-  path: '/safehouses',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReferenceRoute = ReferenceRouteImport.update({
-  id: '/reference',
-  path: '/reference',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OutfitsRoute = OutfitsRouteImport.update({
-  id: '/outfits',
-  path: '/outfits',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MinigamesRoute = MinigamesRouteImport.update({
-  id: '/minigames',
-  path: '/minigames',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const McpRoute = McpRouteImport.update({
-  id: '/mcp',
-  path: '/mcp',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MapRoute = MapRouteImport.update({
-  id: '/map',
-  path: '/map',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LocationsRoute = LocationsRouteImport.update({
-  id: '/locations',
-  path: '/locations',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const JobsRoute = JobsRouteImport.update({
-  id: '/jobs',
-  path: '/jobs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HideoutsRoute = HideoutsRouteImport.update({
-  id: '/hideouts',
-  path: '/hideouts',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CollectiblesRoute = CollectiblesRouteImport.update({
-  id: '/collectibles',
-  path: '/collectibles',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ChallengesRoute = ChallengesRouteImport.update({
-  id: '/challenges',
-  path: '/challenges',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BountiesRoute = BountiesRouteImport.update({
@@ -104,21 +39,86 @@ const BountiesRoute = BountiesRouteImport.update({
   path: '/bounties',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ChallengesRoute = ChallengesRouteImport.update({
+  id: '/challenges',
+  path: '/challenges',
   getParentRoute: () => rootRouteImport,
 } as any)
-const Char91DotwellKnownChar93OauthProtectedResourceRoute =
-  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
-    id: '/.well-known/oauth-protected-resource',
-    path: '/.well-known/oauth-protected-resource',
-    getParentRoute: () => rootRouteImport,
-  } as any)
+const CollectiblesRoute = CollectiblesRouteImport.update({
+  id: '/collectibles',
+  path: '/collectibles',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HideoutsRoute = HideoutsRouteImport.update({
+  id: '/hideouts',
+  path: '/hideouts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JobsRoute = JobsRouteImport.update({
+  id: '/jobs',
+  path: '/jobs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsRoute = LocationsRouteImport.update({
+  id: '/locations',
+  path: '/locations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapRoute = MapRouteImport.update({
+  id: '/map',
+  path: '/map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const McpRoute = McpRouteImport.update({
+  id: '/mcp',
+  path: '/mcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MinigamesRoute = MinigamesRouteImport.update({
+  id: '/minigames',
+  path: '/minigames',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OutfitsRoute = OutfitsRouteImport.update({
+  id: '/outfits',
+  path: '/outfits',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReferenceRoute = ReferenceRouteImport.update({
+  id: '/reference',
+  path: '/reference',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafehousesRoute = SafehousesRouteImport.update({
+  id: '/safehouses',
+  path: '/safehouses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoryRoute = StoryRouteImport.update({
+  id: '/story',
+  path: '/story',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StrangersRoute = StrangersRouteImport.update({
+  id: '/strangers',
+  path: '/strangers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WeaponsRoute = WeaponsRouteImport.update({
+  id: '/weapons',
+  path: '/weapons',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Char91DotmcpChar93ListToolsRoute =
   Char91DotmcpChar93ListToolsRouteImport.update({
     id: '/.mcp/list-tools',
     path: '/.mcp/list-tools',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Char91DotwellKnownChar93OauthProtectedResourceRoute =
+  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
+    id: '/.well-known/oauth-protected-resource',
+    path: '/.well-known/oauth-protected-resource',
     getParentRoute: () => rootRouteImport,
   } as any)
 const Char91DotmcpChar93InvokeToolToolRoute =
@@ -282,102 +282,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/weapons': {
-      id: '/weapons'
-      path: '/weapons'
-      fullPath: '/weapons'
-      preLoaderRoute: typeof WeaponsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/strangers': {
-      id: '/strangers'
-      path: '/strangers'
-      fullPath: '/strangers'
-      preLoaderRoute: typeof StrangersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/story': {
-      id: '/story'
-      path: '/story'
-      fullPath: '/story'
-      preLoaderRoute: typeof StoryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/safehouses': {
-      id: '/safehouses'
-      path: '/safehouses'
-      fullPath: '/safehouses'
-      preLoaderRoute: typeof SafehousesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reference': {
-      id: '/reference'
-      path: '/reference'
-      fullPath: '/reference'
-      preLoaderRoute: typeof ReferenceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/outfits': {
-      id: '/outfits'
-      path: '/outfits'
-      fullPath: '/outfits'
-      preLoaderRoute: typeof OutfitsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/minigames': {
-      id: '/minigames'
-      path: '/minigames'
-      fullPath: '/minigames'
-      preLoaderRoute: typeof MinigamesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mcp': {
-      id: '/mcp'
-      path: '/mcp'
-      fullPath: '/mcp'
-      preLoaderRoute: typeof McpRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/map': {
-      id: '/map'
-      path: '/map'
-      fullPath: '/map'
-      preLoaderRoute: typeof MapRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/locations': {
-      id: '/locations'
-      path: '/locations'
-      fullPath: '/locations'
-      preLoaderRoute: typeof LocationsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/jobs': {
-      id: '/jobs'
-      path: '/jobs'
-      fullPath: '/jobs'
-      preLoaderRoute: typeof JobsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/hideouts': {
-      id: '/hideouts'
-      path: '/hideouts'
-      fullPath: '/hideouts'
-      preLoaderRoute: typeof HideoutsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/collectibles': {
-      id: '/collectibles'
-      path: '/collectibles'
-      fullPath: '/collectibles'
-      preLoaderRoute: typeof CollectiblesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/challenges': {
-      id: '/challenges'
-      path: '/challenges'
-      fullPath: '/challenges'
-      preLoaderRoute: typeof ChallengesRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/bounties': {
@@ -387,18 +296,102 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BountiesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/challenges': {
+      id: '/challenges'
+      path: '/challenges'
+      fullPath: '/challenges'
+      preLoaderRoute: typeof ChallengesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/.well-known/oauth-protected-resource': {
-      id: '/.well-known/oauth-protected-resource'
-      path: '/.well-known/oauth-protected-resource'
-      fullPath: '/.well-known/oauth-protected-resource'
-      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
+    '/collectibles': {
+      id: '/collectibles'
+      path: '/collectibles'
+      fullPath: '/collectibles'
+      preLoaderRoute: typeof CollectiblesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hideouts': {
+      id: '/hideouts'
+      path: '/hideouts'
+      fullPath: '/hideouts'
+      preLoaderRoute: typeof HideoutsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jobs': {
+      id: '/jobs'
+      path: '/jobs'
+      fullPath: '/jobs'
+      preLoaderRoute: typeof JobsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations': {
+      id: '/locations'
+      path: '/locations'
+      fullPath: '/locations'
+      preLoaderRoute: typeof LocationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/map': {
+      id: '/map'
+      path: '/map'
+      fullPath: '/map'
+      preLoaderRoute: typeof MapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mcp': {
+      id: '/mcp'
+      path: '/mcp'
+      fullPath: '/mcp'
+      preLoaderRoute: typeof McpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/minigames': {
+      id: '/minigames'
+      path: '/minigames'
+      fullPath: '/minigames'
+      preLoaderRoute: typeof MinigamesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outfits': {
+      id: '/outfits'
+      path: '/outfits'
+      fullPath: '/outfits'
+      preLoaderRoute: typeof OutfitsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reference': {
+      id: '/reference'
+      path: '/reference'
+      fullPath: '/reference'
+      preLoaderRoute: typeof ReferenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safehouses': {
+      id: '/safehouses'
+      path: '/safehouses'
+      fullPath: '/safehouses'
+      preLoaderRoute: typeof SafehousesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/story': {
+      id: '/story'
+      path: '/story'
+      fullPath: '/story'
+      preLoaderRoute: typeof StoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/strangers': {
+      id: '/strangers'
+      path: '/strangers'
+      fullPath: '/strangers'
+      preLoaderRoute: typeof StrangersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/weapons': {
+      id: '/weapons'
+      path: '/weapons'
+      fullPath: '/weapons'
+      preLoaderRoute: typeof WeaponsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/.mcp/list-tools': {
@@ -406,6 +399,13 @@ declare module '@tanstack/react-router' {
       path: '/.mcp/list-tools'
       fullPath: '/.mcp/list-tools'
       preLoaderRoute: typeof Char91DotmcpChar93ListToolsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/.well-known/oauth-protected-resource': {
+      id: '/.well-known/oauth-protected-resource'
+      path: '/.well-known/oauth-protected-resource'
+      fullPath: '/.well-known/oauth-protected-resource'
+      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/.mcp/invoke-tool/$tool': {

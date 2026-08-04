@@ -17,8 +17,8 @@ import { ImportExportButtons } from "@/components/guide/ImportExportButtons";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dashboard — RDR1 Completion Guide" },
-      { name: "description", content: "Track your Red Dead Redemption 100% progress across every category and region." },
+      { title: "Dashboard — RDR2 Completionist Guide" },
+      { name: "description", content: "Track your Red Dead Redemption 2 official 100% progress and completionist extras across every category and region." },
     ],
   }),
   component: DashboardPage,
@@ -152,6 +152,13 @@ function DashboardPage() {
       .slice(0, 5);
   }, [items]);
 
+  const guideTips = [
+    "Start with official 100% requirements to build a clean progression path before chasing extras.",
+    "Use the Extras filter when you want to focus on completionist-only goals like collectibles and hidden side content.",
+    "Pin your next few objectives from any detail page so they stay visible from the dashboard.",
+    "Switch to region-based filtering when you want to plan a more efficient route during a playthrough.",
+  ];
+
   return (
     <div className="mx-auto max-w-7xl px-6 py-6 space-y-6">
       <header className="flex flex-wrap items-end justify-between gap-4">
@@ -171,6 +178,27 @@ function DashboardPage() {
         <Stat label="Completionist" value={`${all.pct}%`} sub={`${all.done} / ${all.total} total`} />
         <Stat label="Extras cleared" value={`${extras.pct}%`} sub={`${extras.done} / ${extras.total} optional`} />
         <Stat label="Pinned tasks" value={String(pinned.length)} sub="Highest priority" />
+      </section>
+
+      <section className="rounded-lg border border-hairline bg-panel/40 p-5">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <h2 className="font-display text-parchment text-xl">Guide tips</h2>
+            <p className="mt-1 text-sm text-muted-foreground max-w-2xl">
+              A few practical ways to make the completionist guide easier to use while you play.
+            </p>
+          </div>
+          <div className="rounded-full border border-brass/30 bg-brass/10 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-brass">
+            New helper section
+          </div>
+        </div>
+        <ul className="mt-4 grid gap-3 md:grid-cols-2">
+          {guideTips.map((tip) => (
+            <li key={tip} className="rounded-md border border-hairline/70 bg-background/30 p-3 text-sm text-parchment/90">
+              {tip}
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-4">

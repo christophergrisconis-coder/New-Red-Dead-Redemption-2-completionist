@@ -26,12 +26,12 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
-          path: ./.output/public
+          path: ./dist
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: ${{ vars.CLOUDFLARE_PAGES_PROJECT_NAME || 'advanced-creation-studio' }}
-          directory: ./.output/public
+          directory: ./dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}

@@ -146,7 +146,7 @@ function ContactForm() {
   );
 }
 
-function HomePage() {
+export function HomePage() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-8 space-y-6">
 

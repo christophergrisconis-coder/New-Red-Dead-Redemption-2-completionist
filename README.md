@@ -33,6 +33,8 @@ When you are ready to publish it publicly or move it to a custom domain, this re
 
 If you want to run it locally, install dependencies and start the app in the project folder:
 
+Requirements: Node.js 22.12+.
+
 ```bash
 npm install
 npm run dev

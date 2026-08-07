@@ -69,24 +69,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Dashboard — RDR1 Completion Guide" },
+      { title: "Advanced Creation Studio" },
       {
         name: "description",
         content:
-          "Track your Red Dead Redemption 100% progress across every category and region.",
+          "Premium authority with a human-centered approach to reducing recidivism and supporting reentry.",
       },
-      { property: "og:title", content: "Dashboard — RDR1 Completion Guide" },
+      { property: "og:title", content: "Advanced Creation Studio" },
       {
         property: "og:description",
         content:
-          "Track your Red Dead Redemption 100% progress across every category and region.",
+          "Premium authority with a human-centered approach to reducing recidivism and supporting reentry.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Dashboard — RDR1 Completion Guide" },
-      { name: "twitter:description", content: "Track your Red Dead Redemption 100% progress across every category and region." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/80f68a9f-2456-476b-9b19-78b0a3c809e0/id-preview-0dd22445--1140bb19-1ab5-4fa2-8b19-cff435e6350d.lovable.app-1783720393745.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/80f68a9f-2456-476b-9b19-78b0a3c809e0/id-preview-0dd22445--1140bb19-1ab5-4fa2-8b19-cff435e6350d.lovable.app-1783720393745.png" },
+      { name: "twitter:title", content: "Advanced Creation Studio" },
+      { name: "twitter:description", content: "Premium authority with a human-centered approach to reducing recidivism and supporting reentry." },
+      { property: "og:image", content: "/assets/logo-full-color.svg" },
+      { name: "twitter:image", content: "/assets/logo-full-color.svg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -95,7 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Lato:wght@400;600&display=swap",
       },
     ],
   }),

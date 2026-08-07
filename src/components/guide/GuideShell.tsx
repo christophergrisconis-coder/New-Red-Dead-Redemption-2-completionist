@@ -58,10 +58,10 @@ export function GuideShell({ children }: { children: ReactNode }) {
       <aside className="hidden md:flex md:w-72 lg:w-80 shrink-0 flex-col hairline-r bg-rail sticky top-0 h-screen">
         <div className="px-5 py-5 hairline-b">
           <div className="text-xs uppercase tracking-[0.2em] text-brass-dim">
-            Completion Guide
+            Advanced Creation Studio
           </div>
           <h1 className="mt-1 text-2xl font-display text-parchment leading-tight">
-            Red Dead Redemption
+            Reentry Partnerships
           </h1>
         </div>
 
@@ -69,25 +69,25 @@ export function GuideShell({ children }: { children: ReactNode }) {
           <div>
             <div className="flex items-baseline justify-between">
               <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                Official 100%
+                Partnership readiness
               </span>
               <span className="text-sm font-display text-brass">{official.pct}%</span>
             </div>
             <div className="mt-1.5"><ProgressBar pct={official.pct} /></div>
             <div className="mt-1 text-[11px] text-muted-foreground">
-              {official.done} / {official.total} required
+              {official.done} / {official.total} engaged
             </div>
           </div>
           <div>
             <div className="flex items-baseline justify-between">
               <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                Completionist
+                Community impact
               </span>
               <span className="text-sm font-display text-ember">{completion.pct}%</span>
             </div>
             <div className="mt-1.5"><ProgressBar pct={completion.pct} tone="ember" /></div>
             <div className="mt-1 text-[11px] text-muted-foreground">
-              {completion.done} / {completion.total} tracked
+              {completion.done} / {completion.total} milestones
             </div>
           </div>
         </div>

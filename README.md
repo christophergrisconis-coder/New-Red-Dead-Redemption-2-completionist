@@ -40,4 +40,14 @@ npm install
 npm run dev
 ```
 
+## Deploy to Cloudflare Pages
+
+1. Create a Cloudflare Pages project and connect this GitHub repository.
+2. Add these repository secrets in GitHub:
+   - `CLOUDFLARE_API_TOKEN`
+   - `CLOUDFLARE_ACCOUNT_ID`
+3. Optionally set a repository variable named `CLOUDFLARE_PAGES_PROJECT_NAME` with your Cloudflare Pages project name.
+4. Push to `main` and the workflow will build and deploy the generated `.output/public` folder.
+5. In Cloudflare Pages, add your custom domain once the deployment is live.
+
 This repository is intended to be a strong foundation for your guide while keeping the project independent from any domain decisions for now.

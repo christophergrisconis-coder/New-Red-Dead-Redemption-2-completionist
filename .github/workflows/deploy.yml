@@ -1,4 +1,4 @@
-name: Build
+name: Build and Deploy
 
 on:
   push:
@@ -6,13 +6,14 @@ on:
 
 permissions:
   contents: read
+  deployments: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,4 +26,12 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
-          path: ./dist
+          path: ./.output/public
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ${{ vars.CLOUDFLARE_PAGES_PROJECT_NAME || 'advanced-creation-studio' }}
+          directory: ./.output/public
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

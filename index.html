@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,10 +29,160 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Lato:wght@400;600&display=swap"
     />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <main class="page-shell">
+      <header class="hero card">
+        <div class="hero-copy">
+          <div class="brand-pill">
+            <img src="/assets/logo-white.svg" alt="Advanced Creation Studio" />
+            <span>Advanced Creation Studio</span>
+          </div>
+          <h1>Reentry with Dignity.<br />Results with Purpose.</h1>
+          <p>
+            We partner with government agencies and community organizations to deliver evidence-based reentry
+            programs — built on dignity, measured by outcomes.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#contact">Start a conversation</a>
+            <a class="button secondary" href="#offerings">Our approach</a>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="info-card accent">
+            <h2>Government partnerships</h2>
+            <p>Trusted collaborator for federal and state agencies seeking credible, accountable reentry strategy.</p>
+          </div>
+          <div class="info-card">
+            <h2>Evidence-based outcomes</h2>
+            <p>Programs grounded in proven research — designed to reduce recidivism and report clear impact.</p>
+          </div>
+          <div class="info-card">
+            <h2>Community reintegration</h2>
+            <p>Holistic wraparound support that enables individuals to return, contribute, and remain free.</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="pillars">
+        <article class="card pillar">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.4 7.9-8 9-4.6-1.1-8-4-8-9V7l8-4z" /></svg></div>
+          <h3>Government-trusted partner</h3>
+          <p>A credible, experienced collaborator for federal and state agencies seeking accountable reentry strategy with measurable community outcomes.</p>
+        </article>
+        <article class="card pillar">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5L10 17l9-10" /></svg></div>
+          <h3>Evidence-based programs</h3>
+          <p>Every intervention is grounded in proven methodology — structured to deliver recidivism reduction with clear, reportable metrics.</p>
+        </article>
+        <article class="card pillar">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20c2-4 4-6 8-6s6 2 8 6" /><circle cx="12" cy="8" r="4" /></svg></div>
+          <h3>Human-centered reintegration</h3>
+          <p>We meet individuals where they are, equipping them with the life skills, confidence, and community connections that make reentry last.</p>
+        </article>
+        <article class="card pillar">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19l4-8 4 4 8-12" /></svg></div>
+          <h3>Future-ready workforce pathways</h3>
+          <p>From foundational education to AI-enabled career pathways, we connect participants with the fastest-growing opportunities in the modern economy.</p>
+        </article>
+      </section>
+
+      <section id="offerings" class="offerings">
+        <article class="card offerings-copy">
+          <p class="eyebrow">What we offer</p>
+          <h2>A strategic, human-centered approach to reentry and reintegration.</h2>
+          <p>
+            We help people learn what reentry life requires, build the confidence to return to community, and access education and AI-enabled skills that open doors to one of the country&apos;s fastest-growing industries.
+          </p>
+          <p>
+            Our model is rooted in respect for human potential — and in the measurable results that government partners and communities need to see.
+          </p>
+        </article>
+        <article class="card offerings-list">
+          <p class="eyebrow">Program pillars</p>
+          <ul>
+            <li>Reentry education and life-readiness coaching for individuals returning to community</li>
+            <li>Reintegration planning, mentorship, and wraparound community support services</li>
+            <li>AI and workforce readiness training aligned to high-growth industry opportunities</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="contact" class="contact card">
+        <div class="contact-copy">
+          <p class="eyebrow">Let&apos;s partner</p>
+          <h2>Connect with us to advance safer communities together.</h2>
+          <p>We welcome conversations with government agencies, community organizations, and institutions committed to credible, compassionate reentry outcomes.</p>
+          <div class="contact-links">
+            <a href="mailto:Chrisgrisconis@icloud.com">Chrisgrisconis@icloud.com</a>
+            <a href="tel:9809809449">(980) 980-9449</a>
+            <a href="tel:9806808909">(980) 680-8909</a>
+          </div>
+        </div>
+        <form id="contact-form" novalidate>
+          <div class="field-row">
+            <label>
+              <span>Full name</span>
+              <input type="text" name="name" required placeholder="Dr. Jane Smith" />
+            </label>
+            <label>
+              <span>Email address</span>
+              <input type="email" name="email" required placeholder="you@agency.gov" />
+            </label>
+          </div>
+          <label class="message-field">
+            <span>How can we help?</span>
+            <textarea name="message" rows="5" required placeholder="Tell us about your agency, program goals, or questions about partnership."></textarea>
+          </label>
+          <button type="submit" class="button primary">Send message</button>
+          <p id="form-status" class="form-status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('form-status');
+      const button = form.querySelector('button');
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        button.disabled = true;
+        button.textContent = 'Sending…';
+        status.textContent = '';
+        status.className = 'form-status';
+
+        const data = new FormData(form);
+        try {
+          const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              access_key: '72239a69-b442-4dbf-a123-ce28ba9b5d95',
+              subject: 'New partnership inquiry — Advanced Creation Studio',
+              from_name: data.get('name'),
+              email: data.get('email'),
+              message: data.get('message'),
+            }),
+          });
+          const result = await response.json();
+          if (result.success) {
+            status.textContent = 'Message received. We will follow up shortly.';
+            status.classList.add('success');
+            form.reset();
+          } else {
+            throw new Error('Submission failed');
+          }
+        } catch (error) {
+          status.textContent = 'Something went wrong. Please try again or reach out directly by email.';
+          status.classList.add('error');
+        } finally {
+          button.disabled = false;
+          button.textContent = 'Send message';
+        }
+      });
+    </script>
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "08dd3cb26e754a46a5e1bcab5a86042c"}'></script>
   </body>
 </html>

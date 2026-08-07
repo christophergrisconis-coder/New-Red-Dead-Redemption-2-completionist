@@ -1,43 +1,18 @@
-# Red Dead Redemption 2 Completionist Guide
+# Advanced Creation Studio
 
-A polished, interactive guide for tracking Red Dead Redemption 2 progress with a clear split between:
+A polished, static marketing website for Advanced Creation Studio with:
 
-- Official 100% requirements
-- Completionist-style extras and side content
+- A premium reentry and reintegration message
+- A responsive hero and services section
+- A contact form tied to Web3Forms
+- Cloudflare Web Analytics support
 
-This project is designed as a personal guide companion that can be used locally now and deployed later to a custom domain or hosting platform when you are ready.
+## Local preview
 
-## What’s included
-
-- Category-based tracking for missions, strangers, challenges, collectibles, locations, outfits, weapons, and safehouses
-- Progress persistence on the device running the app
-- A dashboard with status summaries, region-based progress, and pinned next actions
-- A structure that is easy to extend with more content and richer walkthroughs
-
-## Project status
-
-- Built as a local-first guide app
-- Ready for future deployment to GitHub Pages, Vercel, Netlify, Cloudflare Pages, or another host
-- Kept separate from any custom domain until you decide on the final setup
-
-## Future deployment options
-
-When you are ready to publish it publicly or move it to a custom domain, this repository is already structured for a straightforward deployment:
-
-1. Connect the repo to a hosting provider
-2. Build the app with the project’s existing Vite/Nitro setup
-3. Point the host to the generated production output
-4. Attach your domain later if desired
-
-## Local development
-
-If you want to run it locally, install dependencies and start the app in the project folder:
-
-Requirements: Node.js 22.12+.
+Open `index.html` in a browser, or serve the folder with any static web server.
 
 ```bash
-npm install
-npm run dev
+python3 -m http.server 8000
 ```
 
 ## Deploy to Cloudflare Pages
@@ -47,7 +22,5 @@ npm run dev
    - `CLOUDFLARE_API_TOKEN`
    - `CLOUDFLARE_ACCOUNT_ID`
 3. Optionally set a repository variable named `CLOUDFLARE_PAGES_PROJECT_NAME` with your Cloudflare Pages project name.
-4. Push to `main` and the workflow will build and deploy the generated `dist` folder.
+4. Push to `main` and the workflow will deploy the site from the repository root.
 5. In Cloudflare Pages, add your custom domain once the deployment is live.
-
-This repository is intended to be a strong foundation for your guide while keeping the project independent from any domain decisions for now.

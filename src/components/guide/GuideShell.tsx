@@ -145,12 +145,12 @@ export function GuideShell({ children }: { children: ReactNode }) {
       <div className="md:hidden fixed top-0 inset-x-0 z-40 hairline-b bg-rail/95 backdrop-blur">
         <div className="flex items-center justify-between px-4 py-3">
           <div>
-            <div className="text-[10px] uppercase tracking-[0.2em] text-brass-dim">Guide</div>
-            <div className="font-display text-parchment text-lg leading-none">RDR Completion</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-brass-dim">Advanced Creation Studio</div>
+            <div className="font-display text-parchment text-lg leading-none">Reentry Partnerships</div>
           </div>
           <div className="flex items-baseline gap-3 text-xs">
-            <span className="text-brass font-display">{official.pct}% <span className="text-muted-foreground">100%</span></span>
-            <span className="text-ember font-display">{completion.pct}% <span className="text-muted-foreground">All</span></span>
+            <span className="text-brass font-display">{official.pct}% <span className="text-muted-foreground">engaged</span></span>
+            <span className="text-ember font-display">{completion.pct}% <span className="text-muted-foreground">impact</span></span>
           </div>
         </div>
         <MobileNav pathname={pathname} />

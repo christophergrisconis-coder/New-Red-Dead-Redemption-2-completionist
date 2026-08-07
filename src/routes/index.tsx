@@ -59,7 +59,7 @@ function ContactForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: "REPLACE_WITH_WEB3FORMS_KEY",
+          access_key: "72239a69-b442-4dbf-a123-ce28ba9b5d95",
           subject: "New partnership inquiry — Advanced Creation Studio",
           from_name: form.name,
           email: form.email,

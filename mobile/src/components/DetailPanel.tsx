@@ -5,6 +5,12 @@ import type { Trackable } from '../data/types';
 import { useProgress } from '../lib/progress';
 
 export function DetailPanel({ item }: { item: Trackable | null }) {
+  const progress = useProgress((s) => (item ? s.items[item.id] : undefined));
+  const toggleItem = useProgress((s) => s.toggleItem);
+  const toggleStep = useProgress((s) => s.toggleStep);
+  const togglePin = useProgress((s) => s.togglePin);
+  const setNote = useProgress((s) => s.setNote);
+
   if (!item) {
     return (
       <View style={styles.empty}>
@@ -12,11 +18,6 @@ export function DetailPanel({ item }: { item: Trackable | null }) {
       </View>
     );
   }
-  const progress = useProgress((s) => s.items[item.id]);
-  const toggleItem = useProgress((s) => s.toggleItem);
-  const toggleStep = useProgress((s) => s.toggleStep);
-  const togglePin = useProgress((s) => s.togglePin);
-  const setNote = useProgress((s) => s.setNote);
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={{ padding: 20, paddingBottom: 60 }}>
